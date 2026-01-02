@@ -1,0 +1,27 @@
+# Dependency directories (applies to all subdirectories)
+node_modules/
+**/node_modules/
+vendor/
+
+# Build and temporary artifacts (applies to all subdirectories)
+dist/
+build/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.parcel-cache
+.env
+.env.local
+.venv/
+
+# OS and Editor files
+.DS_Store # macOS
+.vscode/ # VS Code editor settings
+.idea/ # WebStorm/IntelliJ editor settings
+
+# Language/framework specific ignores
+# Add specific ignores for your languages here (e.g., Python, Java, etc.)
+# For example, for Python backend:
+__pycache__/
+*.pyc
