@@ -2,7 +2,7 @@ import ContactForm from "../models/ContactForm.js";
 
 export const getForms = async (req, res) => {
   try {
-    const forms = await ContactForm.find({});
+    const forms = await ContactForm.find({}).sort({ createdAt: -1 });
 
     res.status(200).json({ success: true, forms });
   } catch (error) {
@@ -43,7 +43,7 @@ export const deleteForm = async (req, res) => {
 
     if (!form)
       return res
-        .status(400)
+        .status(404)
         .json({ success: false, message: "No such form found" });
 
     res
