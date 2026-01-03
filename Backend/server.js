@@ -1,6 +1,10 @@
 import "dotenv/config";
 import express from "express";
 import cors from "cors";
+import contactRouter from "./routes/contactRoutes.js";
+import connectDB from "./config/db.js";
+
+connectDB();
 
 const app = express();
 
@@ -14,6 +18,8 @@ app.get("/", (req, res) => {
 app.use("/health", (req, res) => {
   res.status(200).send("Server is running fine.");
 });
+
+app.use("/api", contactRouter);
 
 const PORT = process.env.PORT;
 app.listen(PORT, () => {
